@@ -29,14 +29,14 @@ const loadConfig = function () {
         upstreamContent += `upstream ${upstream.name} {\n`;
         upstreamContent += "\tip_hash;\n\n"
         servers.forEach(server => {
-            upstreamContent += `\t${server.name}:${upstream.port};\n`
+            upstreamContent += `\tserver\t${server.name}:${upstream.port};\n`
         });
         upstreamContent += "}\n\n"
     });
 
     fs.writeFile(upstreamFilePath, upstreamContent, function (err) {
         if (err) console.log(err);
-        console.log(`Successfully written config file to ${upstreamFilePath}.`);
+        console.log(`${new Date()} Successfully written config file to ${upstreamFilePath}.`);
     });
 
     if (config.reload_nginx_config) {
