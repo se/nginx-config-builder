@@ -54,5 +54,6 @@ const loadConfig = function () {
 }
 
 fs.watchFile(configPath, loadConfig);
+fs.watchFile(serverPath, loadConfig);
 
 loadConfig();
