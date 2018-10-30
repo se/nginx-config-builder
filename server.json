@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "your-server-01",
+        "active" : true,
+        "ip" : "",
+        "updatehost" : false
+    },
+    {
+        "name" : "your-server-02",
+        "active" : true,
+        "ip" : "",
+        "updatehost" : false
+    }
+]
