@@ -29,7 +29,9 @@ const loadConfig = function () {
         upstreamContent += `upstream ${upstream.name} {\n`;
         upstreamContent += "\tip_hash;\n\n"
         servers.forEach(server => {
-            upstreamContent += `\tserver\t${server.name}:${upstream.port};\n`
+            if (server.active) {
+                upstreamContent += `\tserver\t${server.name}:${upstream.port};\n`;
+            }
         });
         upstreamContent += "}\n\n"
     });
